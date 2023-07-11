@@ -1,0 +1,25 @@
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image {
+    width: 90%;
+    height: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 25px;
+    position: relative;
+    filter: brightness(0.7);
+  }
+    
+  h1 {
+    color: white;
+    z-index: 9999;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+  }
