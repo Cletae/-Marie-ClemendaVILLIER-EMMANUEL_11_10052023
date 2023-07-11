@@ -1,0 +1,22 @@
+footer{
+    background: black;
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.logo_footer{
+    margin-top: 3rem;
+    width: 8rem;
+}
+
+@media only screen and (max-width: 430px) {
+    footer {
+      padding: 2rem;
+      font-size: 1rem;
+    }
+  }
+
