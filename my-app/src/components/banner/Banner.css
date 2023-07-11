@@ -22,4 +22,6 @@
     z-index: 9999;
     position: absolute;
     font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
   }

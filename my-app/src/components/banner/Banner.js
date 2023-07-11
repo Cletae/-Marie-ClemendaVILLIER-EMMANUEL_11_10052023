@@ -1,5 +1,5 @@
 import "./Banner.css";
-import bannerHome from "../assets/images/bannerHome.png";
+import bannerHome from "../../assets/images/bannerHome.png";
 
 function Banner() {
   return (
