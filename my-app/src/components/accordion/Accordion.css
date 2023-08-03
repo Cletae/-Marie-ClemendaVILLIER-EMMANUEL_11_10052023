@@ -8,6 +8,12 @@
     height: 100%;
     margin: 2rem auto;
   }
+
+  .accordion-about > .accordion-house {
+    width: 90%;
+    height: 100%;
+    margin: 2rem auto;
+  }
   
   .item {
     background: #f6f6f6;
