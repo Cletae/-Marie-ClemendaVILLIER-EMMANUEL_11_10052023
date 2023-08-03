@@ -1,0 +1,109 @@
+.accordion-container {
+    display: flex;
+    min-height: 25rem;
+  }
+  
+  .accordion-house {
+    width: 42%;
+    height: 100%;
+    margin: 2rem auto;
+  }
+  
+  .item {
+    background: #f6f6f6;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  
+  .accordion-house-title {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6060;
+    padding: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  span {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .accordion-title {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6060;
+    padding: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .accordion-content {
+    color: #ff6060;
+    max-height: 0;
+    display: none;
+    overflow: hidden;
+  }
+  
+  .accordion-content.show {
+    max-height: 100vh;
+    text-align: justify;
+    display: block;
+    padding: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .accordion-about-container {
+    min-height: 60vh;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .accordion {
+      width: 84%;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .accordion {
+      width: 60%;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .accordion {
+      width: 50%;
+    }
+  }
+  
+  @media only screen and (max-width: 735px) {
+    .accordion-container {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .accordion-house {
+      width: 100%;
+    }
+    /* .accordion-content.show {
+      text-align: center;
+    } */
+  }
+  
+  @media only screen and (max-width: 536px) {
+    .accordion-house-title {
+      font-size: 0.7rem;
+    }
+    span {
+      font-size: 2rem;
+    }
+
+    .accordion-house {
+      width: 100%;
+    }
+  }

@@ -25,3 +25,44 @@
     font-size: 3rem;
     font-weight: 500;
   }
+
+  /* Media Home */
+
+  @media screen and (min-width: 420px) and (max-width: 665px) {
+    h1 {
+      max-width: 55%;
+      left: 3rem;
+    }
+
+    .banner-image {
+      height: 111px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    h1{
+      max-width: 75%;
+      left: 8rem;
+      font-size: 2rem;
+    }
+  }
+
+  /* Media About */
+  @media only screen and (min-width: 1200px) {
+    .hero-section-about {
+      width: 90%;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .hero-section-about {
+      width: 70%;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .hero-section-about {
+      width: 60%;
+    }
+  }
+
