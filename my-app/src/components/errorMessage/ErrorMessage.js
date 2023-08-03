@@ -12,9 +12,7 @@ function ErrorPage() {
         Cliquez sur le logo ou les liens pour accéder à une autre page.
       </p>
       <Link to="/" className="link-back-to-home">
-        <button className="return__button">
-          Retournez sur la page d’accueil
-        </button>
+        <p className="return__link">Retournez sur la page d’accueil</p>
       </Link>
     </section>
   );

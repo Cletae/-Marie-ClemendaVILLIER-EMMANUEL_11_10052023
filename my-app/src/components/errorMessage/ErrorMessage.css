@@ -23,15 +23,14 @@
     color: #ff6060;
   }
   
-  .return__button {
-    background-color: #ff6060;
-    color: white;
+  .return__link {
     border: none;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: underline;
   }
   
   @media only screen and (min-width: 1200px) {
