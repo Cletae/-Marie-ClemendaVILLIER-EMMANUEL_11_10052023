@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "./SliderImage.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-function SliderImages({ pictures }) {
+function SliderImages(props) {
+  const { pictures } = props;
   const [current, setCurrent] = useState(0);
   const length = pictures.length;
+
+  console.log(pictures);
 
   const prev = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);

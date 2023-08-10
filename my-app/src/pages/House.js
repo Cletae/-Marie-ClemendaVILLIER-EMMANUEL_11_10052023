@@ -1,28 +1,103 @@
-import { useParams, Navigate } from "react-router-dom";
-import Data from "../data/dataHouse.json";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 import SliderImages from "../components/sliderImage/SliderImage";
-import HouseDetails from "../components/infoHome/InfoHome";
 import Accordion from "../components/accordion/Accordion";
+import "./Pages.css";
 
 function House() {
   const { id } = useParams();
-  const house = Data.find((item) => item.id === id);
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const onNavigate = useNavigate();
 
-  if (!house) return <Navigate to="/404" />;
+  useEffect(
+    function () {
+      fetch("/data/dataHouse.json")
+        .then(function (res) {
+          if (res.ok) {
+            return res.json();
+          }
+        })
+        .then(function (data) {
+          setIsLoading(false);
+          data.map((location) => {
+            if (location.id === id) {
+              setData(location);
+            }
+            return location;
+          });
+          let newId = data.filter((item) => item.id === id);
+          if (newId.length === 0) {
+            onNavigate("error");
+          }
+        });
+    },
+    [id, isLoading, onNavigate]
+  );
+
+  const starColor = {
+    red: "#ff6060",
+    grey: "#E3E3E3",
+  };
+  const stars = Array(5).fill(0);
 
   return (
-    <div>
-      <SliderImages pictures={house.pictures} />
-      <HouseDetails />
-      <div className="accordion-container">
-        <Accordion title="Description">{house.description}</Accordion>
-        <Accordion title="Equipements">
-          {house.equipments.map((item) => (
-            <div key={item}>{item}</div>
-          ))}
-        </Accordion>
-      </div>
-    </div>
+    <>
+      {!isLoading && (
+        <div>
+          <SliderImages pictures={data.pictures} />
+
+          {/* House Details */}
+          <div className="house-infos-container">
+            <div className="house-infos-details">
+              <h2 className="house-title">{data.title}</h2>
+              <span className="house-location">{data.location}</span>
+              <div className="house-tags">
+                {data.tags.map((tag) => (
+                  <div className="tag" key={tag}>
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="house-host-rating">
+              <div className="host-infos-container">
+                <span className="host-name">{data.host.name}</span>
+                <img
+                  className="host-profil"
+                  alt="house"
+                  src={data.host.picture}
+                />
+              </div>
+              <div className="host-rating">
+                <div className="stars">
+                  {stars.map((_, index) => (
+                    <FaStar
+                      key={index}
+                      className="stars"
+                      color={
+                        data.rating > index ? starColor.red : starColor.grey
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="accordion-container">
+            <Accordion title="Description">{data.description}</Accordion>
+            <Accordion title="Equipements">
+              {data.equipments.map((item) => (
+                <div key={item}>{item}</div>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

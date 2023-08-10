@@ -1,33 +1,18 @@
 import "./Cards.css";
 import { Link } from "react-router-dom";
-import Data from "../../data/dataHouse.json";
+// import Data from "../../data/dataHouse.json";
 
-function Cards() {
+function Cards(props) {
+  const card = props.card;
   return (
-    <section className="card">
-      <ul className="card-list">
-        <li className="card-item">
-          {Data.map((item) => {
-            return (
-              <Link
-                to={`/house/${item.id}`}
-                className="house-link"
-                key={item.id}
-              >
-                <img
-                  src={item.cover}
-                  alt={item.title}
-                  className="house-image"
-                />
-                <div className="card-info">
-                  <p className="item-title">{item.title}</p>
-                </div>
-              </Link>
-            );
-          })}
-        </li>
-      </ul>
-    </section>
+    <div key={card.id} className="card">
+      <Link to={`/house/${card.id}`} className="house-link" key={card.id}>
+        <img src={card.cover} alt={card.title} className="house-image" />
+        <div className="card-info">
+          <p className="item-title">{card.title}</p>
+        </div>
+      </Link>
+    </div>
   );
 }
 

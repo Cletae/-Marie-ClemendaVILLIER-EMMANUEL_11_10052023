@@ -2,7 +2,9 @@ import "./Accordion.css";
 import { useState } from "react";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
-function Accordion({ title, children }) {
+function Accordion(props) {
+  const title = props.title;
+  const children = props.children;
   const [open, setOpen] = useState(false);
   const toggle = () => {
     setOpen(!open);
