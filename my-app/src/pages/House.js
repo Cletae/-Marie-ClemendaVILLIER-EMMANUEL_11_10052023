@@ -21,16 +21,11 @@ function House() {
         })
         .then(function (data) {
           setIsLoading(false);
-          data.map((location) => {
-            if (location.id === id) {
-              setData(location);
-            }
-            return location;
-          });
-          let newId = data.filter((item) => item.id === id);
-          if (newId.length === 0) {
+          const element = data.find((item) => item.id === id);
+          if (!element) {
             onNavigate("error");
           }
+          setData(element);
         });
     },
     [id, isLoading, onNavigate]

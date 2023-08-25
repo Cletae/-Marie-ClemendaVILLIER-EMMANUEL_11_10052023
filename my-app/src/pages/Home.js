@@ -40,17 +40,6 @@ function Home() {
       )}
     </>
   );
-
-  // return(
-  //     <>{!isLoading && (
-  //         <div className="main">
-  //         <Banner className="banner_1"/>
-  //         <div className="card-container">
-  //             {cards.map((card) => <Card key={card.id} card={card}/>)}
-  //         </div>
-  //     </div>
-  // )}</>
-  // )
 }
 
 export default Home;
