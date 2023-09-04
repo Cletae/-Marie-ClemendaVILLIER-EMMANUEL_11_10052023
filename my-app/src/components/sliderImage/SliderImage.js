@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SliderImage.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import chevronLeft from "../../assets/images/chevron-left.svg";
+import chevronRight from "../../assets/images/chevron-right.svg";
 
 function SliderImages(props) {
   const { pictures } = props;
@@ -8,21 +9,42 @@ function SliderImages(props) {
   const length = pictures.length;
 
   const prev = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+    if (current > 0) {
+      setCurrent(current - 1);
+    } else {
+      setCurrent(length - 1);
+    }
   };
   const next = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+    if (current < length - 1) {
+      setCurrent(current + 1);
+    } else {
+      setCurrent(0);
+    }
   };
 
   return (
     <div className="sliders">
       <img src={pictures[current]} className="slide-image" alt="slides" />
-      <FaChevronLeft onClick={prev} className="left-arrow">
-        Prev
-      </FaChevronLeft>
-      <FaChevronRight onClick={next} className="right-arrow">
-        Next
-      </FaChevronRight>
+      {length > 1 && (
+        <div className="controls">
+          <img
+            src={chevronLeft}
+            alt="chevronLeft"
+            onClick={prev}
+            className="left-arrow"
+          ></img>
+          <div className="slide-counter">
+            {current + 1} / {pictures.length}
+          </div>
+          <img
+            src={chevronRight}
+            alt="chevronRight"
+            onClick={next}
+            className="right-arrow"
+          ></img>
+        </div>
+      )}
     </div>
   );
 }

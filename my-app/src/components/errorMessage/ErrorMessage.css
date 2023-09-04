@@ -65,7 +65,7 @@
       font-size: 1rem;
     }
   }
-  @media only screen and (max-width: 356px) {
+  @media only screen and (max-width: 360px) {
     .letter-404 {
       font-size: 7rem;
     }
