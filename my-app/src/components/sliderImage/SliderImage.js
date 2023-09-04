@@ -7,8 +7,6 @@ function SliderImages(props) {
   const [current, setCurrent] = useState(0);
   const length = pictures.length;
 
-  console.log(pictures);
-
   const prev = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };

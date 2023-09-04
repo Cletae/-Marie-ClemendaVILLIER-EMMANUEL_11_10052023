@@ -15,6 +15,7 @@
     border-radius: 25px;
     position: relative;
     filter: brightness(0.7);
+    object-fit: cover;
   }
     
   h1 {

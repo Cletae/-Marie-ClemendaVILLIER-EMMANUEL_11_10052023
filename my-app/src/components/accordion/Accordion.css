@@ -81,13 +81,13 @@
     }
   }
   
-  @media only screen and (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     .accordion {
       width: 50%;
     }
   }
   
-  @media only screen and (max-width: 735px) {
+  @media screen and (max-width: 735px) {
     .accordion-container {
       flex-direction: column;
       width: 100%;
@@ -101,7 +101,7 @@
     } */
   }
   
-  @media only screen and (max-width: 536px) {
+  @media screen and (max-width: 536px) {
     .accordion-house-title {
       font-size: 0.7rem;
     }
